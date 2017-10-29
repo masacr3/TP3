@@ -17,7 +17,13 @@ def desencolar_encolar_bites(self):
 	if not self.prim == self.ultimo:
 		return
 	
-	self.prim.dato, self.ultimo.dato =  self.ultimo.dato, self.prim.dato
+	ultimo = self.prim
+	self.prim = self.prim.sig
+	ultimo.sig = None
+	self.ultimo.sig = ultimo
+	self.ultimo = self.ultimo.sig
+	
+	
 
 
 Comando = {"!": cola.encolar(0),
