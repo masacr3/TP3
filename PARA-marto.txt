@@ -1,0 +1,18 @@
+tendrias que crear las clases
+
+#nodo
+#lista enlazada ( simple )
+ 
+#pila
+  +apilar
+  +desapilar
+  +push
+  +pop
+  
+#Cola
+  +metodo especial()
+    encolar_principio # para el debug
+  +desencolar
+  +encolar
+  +push
+  +pop
