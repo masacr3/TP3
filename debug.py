@@ -29,7 +29,7 @@ def debugging(archivo):
     cinta.encolar(" ")
     pantalla = Colas.COLA()
     cola = [0]
-
+    pila = []
     load_archivo(cinta,"tt.txt")
 
     while not cinta.esta_vacia():
@@ -62,6 +62,25 @@ def debugging(archivo):
         print("command: {} ->{}\n".format(value,comandos.get(value,"")),end="")
         input("\n presione cualquier tecla")
         cinta.desencolar()
+        clrscr()
+        
+        op = input("a -atras | s- adelante: ")
+        if op == "s":
+            right = True
+
+        if op == "a":
+            right = False
+
+        if right:
+            pila.append(cinta.desencolar())
+        else:
+            try:
+                value = pila.pop()
+                cinta.colarse(value)
+            except IndexError:
+                clrscr()
+                continue
+
         clrscr()
 
 debugging(sys.argv[1])
