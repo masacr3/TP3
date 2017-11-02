@@ -68,6 +68,19 @@ class LISTAENLAZADA:
 		self.ultimo = previo
 		self.len -= 1
 		return actua.value
+	
+	def insertar_primero(self,value):
+		_nodo = Nodo(value)
+
+		if self.len == 0:
+			self.len += 1
+			self.primero = self.ultimo = _nodo
+			return
+
+		_nodo.sig = self.primero
+		self.primero = _nodo
+		self.len += 1
+		return
 
 	def __iter__(self):
 		return IteradorLista(self.primero)
@@ -101,6 +114,9 @@ class COLA:
 
 	def encolar(self,value):
 		self.items.push(value)
+	
+	def colarse(self,value):
+		self.items.insertar_primero(value)
 
 	def desencolar(self):
 		return self.items.pop(0)
