@@ -23,10 +23,12 @@ def debugging(cola):
     pantalla = Colas.COLA()
     cola = [0]
     pila = []
+    #para MARTO.. que no sabe lo que muestra
     print("{} -->{}".format("[cola]","[mensaje en pantalla]"))
     print("{}".format("[codigo fuente]"))
     print("{}".format("[posicion actual]"))
-    print("{}".format("[commando: ->que hace]"))
+    print("{}".format("[commando actual: ->que hace]"))
+    
     input("presione enter")
     clrscr()
     while not cinta.esta_vacia():
