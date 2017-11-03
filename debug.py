@@ -1,3 +1,9 @@
+#leonel R. Rolon
+#Facultad de Ingenieria Universidad Buenos Aires
+
+#debug final para Archivos .SCEQL
+#Compara \ / en tiempo de ejecucion
+
 import os
 import Colas
 #borrar pantalla
