@@ -108,33 +108,33 @@ class MAQUINA:
         self.avanzar_cinta()
 
     def _salta_hasta_la_barra_opuesta(self): #/
-        prox = True
+        repeticion = 0
         while True:
             self.retrocer_cinta()
             value = self.cinta.actual()
             if value == "/":
-                prox = False
+                repeticion += 1
 
             if value == "\\":
-                if prox == False:
-                    prox = True
+                if repeticion != 0:
+                    repeticion -= 0
                 else:
                     break
 
         self.show()
 
     def _evaluar_saltar(self):
-        prox = True
+        repeticion = 0
         if self.cola[0] == 0:
             self.avanzar_cinta()
             while True:
                 value = self.cinta.actual()
                 if value == "\\":
-                    prox = False
+                    repeticion += 1
 
                 if value == "/":
-                    if prox == False:
-                        prox = True
+                    if repeticion != 0:
+                        repeticion -= 0
                     else:
                         self.avanzar_cinta()
                         self.show()
