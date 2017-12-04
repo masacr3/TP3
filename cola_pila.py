@@ -106,7 +106,8 @@ class Cola:
 
 	def __init__(self):
 		self.items = ListaEnlazada()
-
+	
+	#Es una implementacion nueva que se creo Para que pueda usarla el objeto Cinta ( no es una primitiva )
 	def insertar_primero(self,value):
 		self.items.insertar_al_principio(value)
 
