@@ -14,7 +14,7 @@ class Nodo:
 	def __str__(self):
 		return str(self.value)
 
-class LISTAENLAZADA:
+class ListaEnlazada:
 	""" Modela una ListaEnlazada"""
 	def __init__(self):
 		""" Constructor de la clase """
@@ -22,7 +22,7 @@ class LISTAENLAZADA:
 		self.ultimo = None
 		self.len = 0
 
-	def push(self,value):
+	def append(self,value):
 		_nodo = Nodo(value)
 
 		if self.len == 0:
@@ -68,8 +68,9 @@ class LISTAENLAZADA:
 		previo.sig = actual.sig
 		self.ultimo = previo
 		return actua.value
-
-	def insertar(self,value):
+	
+	#Es una implementacion nueva que se creo Para que pueda usarla el objeto Cinta ( no es una primitiva )
+	def insertar_al_principio(self,value):
 		nodo = Nodo(value)
 		nodo.sig = self.primero
 		self.primero = nodo
@@ -101,16 +102,16 @@ class IteradorLista:
 	def __next__(self):
 		return self.next()
 
-class COLA:
+class Cola:
 
 	def __init__(self):
-		self.items = LISTAENLAZADA()
+		self.items = ListaEnlazada()
 
 	def insertar_primero(self,value):
-		self.items.insertar(value)
+		self.items.insertar_al_principio(value)
 
 	def encolar(self,value):
-		self.items.push(value)
+		self.items.append(value)
 
 	def desencolar(self):
 		return self.items.pop(0)
@@ -124,7 +125,7 @@ class COLA:
 	def __str__(self):
 		return str(self.items)
 
-class PILA:
+class Pila:
 	"""
 	Modela una pila con operaciones de apilar, desapilar, ver si esta vacia
 	y ver el tope de la misma.
@@ -159,7 +160,7 @@ class PILA:
 		"""
 		if self.esta_vacia():
 			raise ValueError("Pila vacia.")
-		return self.items[len(self.items)-1]
+		return self.items[-1]
 
 
 	def __str__(self):
